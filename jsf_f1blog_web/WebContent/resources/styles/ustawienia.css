@@ -1,0 +1,44 @@
+.user-info h1 {
+  font-size: 1.7rem;
+}
+
+.user-info h3 {
+  font-size: 1.1rem;
+}
+
+.user-info p {
+  font-size: 1.1rem;
+  margin: 5px 20%;
+}
+
+.user-main {
+  width: 70vw;
+  min-height: 70vh;
+  height: auto;
+  margin: 20px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 20px 30px rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+}
+
+.user-info {
+  width: 40vw;
+  height: auto;
+  margin: 20px auto;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+@media screen and (max-width: 900px) {
+  .user-main {
+    width: 90vw;
+  }
+
+  .user-info {
+    width: 70vw;
+  }
+}

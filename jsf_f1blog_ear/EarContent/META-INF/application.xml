@@ -7,7 +7,7 @@
   <module>
     <web>
       <web-uri>jsf_f1blog_web.war</web-uri>
-      <context-root>jsf_f1blog_web</context-root>
+      <context-root>jsf_f1blog</context-root>
     </web>
   </module>
 </application>

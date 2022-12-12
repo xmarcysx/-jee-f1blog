@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>F1 Blog</title>
+</h:head>
+
+<ui:composition template="/templates/main-template.xhtml">
+
+	<ui:define name="title">
+       	F1Blog
+    </ui:define>
+	<ui:define name="content">
+		<div class="login-container">
+		  <div class="login-main">
+		    <div class="logoF1">
+		      <h1>F1Blog<span>🏎️</span></h1>
+		    </div>
+		
+		    <div class="login-form">
+		      <form action="{$conf->action_root}login" method="post">
+		        <p class="login-text" style="font-size: 2rem; font-weight: 800">
+		          Logowanie
+		        </p>
+		        <div class="input-group">
+		          <input type="text" placeholder="Nazwa użytkownika" name="username" />
+		        </div>
+		
+		        <div class="input-group">
+		          <input type="password" placeholder="Hasło" name="password" />
+		        </div>
+		
+		        <div class="log-btn">
+			        <h:form>
+			    		<h:commandButton value="Zaloguj" styleClass="btn"  action="#" />
+			    	</h:form>
+		        </div>
+		        <p class="login-register-text">
+		        Nie masz konta?
+		        	<p:commandLink  action="#">
+    					<h:outputText styleClass="registerText" value="Zarejestruj się" />
+					</p:commandLink>
+		        </p>
+		      </form>
+		    </div>
+		  </div>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

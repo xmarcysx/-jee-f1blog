@@ -1,0 +1,21 @@
+.input-2022 {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.input-2022 input {
+  width: 50%;
+  height: 100%;
+  border: 2px solid white;
+  padding: 15px 20px;
+  font-size: 1rem;
+  border-radius: 30px;
+  border: 2px solid black;
+  transition: 0.3s;
+}
+
+.input-2022 input:focus,
+.input-2022 input:valid {
+  outline: none;
+}
