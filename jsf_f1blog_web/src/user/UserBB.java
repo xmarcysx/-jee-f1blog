@@ -14,7 +14,7 @@ import jsf_f1blog_dao.UserDAO;
 @RequestScoped
 public class UserBB {
 	private static final String PAGE_LOGIN = "/pages/login.xhtml?faces-redirect=true";
-
+	private static final String PAGE_REGISTER = "/pages/register.xhtml?faces-redirect=true";
 
 	
 	@EJB
@@ -25,5 +25,11 @@ public class UserBB {
 		HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true);
 		session.invalidate();
 		return PAGE_LOGIN;
+	}
+	
+	public String goToRegister(){
+		HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true);
+		session.invalidate();
+		return PAGE_REGISTER;
 	}
 }

@@ -23,30 +23,27 @@
 		    </div>
 		
 		    <div class="login-form">
-		      <form action="{$conf->action_root}login" method="post">
+		      <h:form>
 		        <p class="login-text" style="font-size: 2rem; font-weight: 800">
 		          Logowanie
 		        </p>
 		        <div class="input-group">
-		          <input type="text" placeholder="Nazwa użytkownika" name="username" />
+		        	<p:inputText id="username" placeholder="Nazwa użytkownika" value="#{loginBB.username}" required="true" requiredMessage="Podaj nazwę użytkownika"/>
 		        </div>
-		
 		        <div class="input-group">
-		          <input type="password" placeholder="Hasło" name="password" />
-		        </div>
+		        	<p:password id="password" placeholder="Hasło" value="#{loginBB.password}" required="true" requiredMessage="Podaj hasło"/>
+		        </div>		
+				<h:messages styleClass="msg"/>
 		
 		        <div class="log-btn">
-			        <h:form>
-			    		<h:commandButton value="Zaloguj" styleClass="btn"  action="#" />
-			    	</h:form>
+			    	<h:commandButton value="Zaloguj" styleClass="btn"  action="#{loginBB.doLogin()}" update="msg"/>
 		        </div>
-		        <p class="login-register-text">
-		        Nie masz konta?
-		        	<p:commandLink  action="#">
-    					<h:outputText styleClass="registerText" value="Zarejestruj się" />
-					</p:commandLink>
-		        </p>
-		      </form>
+		      </h:form>
+		      <p class="login-register-text">
+			  	<h:form>
+			    	Nie masz konta? <h:commandLink styleClass="registerText" value="Zarejestruj się" action="#{userBB.goToRegister()}" />
+				</h:form>
+		      </p>
 		    </div>
 		  </div>
 		</div>

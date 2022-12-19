@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>F1 Blog</title>
+</h:head>
+
+<ui:composition template="/templates/main-template.xhtml">
+
+	<ui:define name="title">
+       	F1Blog
+    </ui:define>
+	<ui:define name="content">
+		<div class="login-container">
+		  <div class="login-main">
+		    <div class="logoF1">
+		      <h1>F1Blog<span>🏎️</span></h1>
+		    </div>
+		
+		    <div class="login-form">
+				<h:form>
+			    	<p class="register-text" style="font-size: 2rem; font-weight: 800">
+			          Rejestracja
+			        </p>
+			        <div class="input-group">
+			        	<p:inputText id="email" placeholder="E-mail" value="#{registerBB.email}" required="true" requiredMessage="Podaj e-mail"/>
+			        </div>
+			        <div class="input-group">
+			        	<p:inputText id="username" placeholder="Nazwa użytkownika" value="#{registrBB.username}" required="true" requiredMessage="Podaj nazwę użytkownika"/>
+			        </div>
+			        <div class="input-group">
+			        	<p:inputText id="password" placeholder="Hasło" value="#{registerBB.password}" required="true" requiredMessage="Podaj hasło"/>
+			        </div>
+			        <div class="input-group">
+			        	<p:inputText id="password_repeat" placeholder="Powtórz hasło" value="#{registerBB.password}" required="true" requiredMessage="Powtórz hasło"/>
+			        </div>
+			        
+			        <h:messages styleClass="msg"/>
+			        
+			        
+			        <div class="log-btn">
+			    		<h:commandButton value="Zarejestruj" styleClass="btn"  action="#{registerBB.doRegister()}" update="msg"/>
+		         	</div>
+		         	
+				</h:form>
+				
+				<p class="login-register-text">
+				  	<h:form>
+				    	Masz konto? <h:commandLink styleClass="registerText" value="Zaloguj się" action="#{userBB.goToLogin()}" />
+					</h:form>
+		      	</p>
+		    </div>
+		  </div>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

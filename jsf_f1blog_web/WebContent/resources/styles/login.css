@@ -32,10 +32,19 @@
 }
 
 .registerText {
-	color: rgb(255, 104, 95);
+	color: rgba(255, 41, 41, 1);
 	text-decoration: none;
 	font-size: 16px;
 	font-weight: bold;
+}
+
+.msg {
+  padding: 10px;
+  background-color: #f44336; /* Red */
+  color: white;
+  border-radius: 10px;
+	list-style-type: none;
+	list-style-image: none;
 }
 
 .input-group input:focus,
