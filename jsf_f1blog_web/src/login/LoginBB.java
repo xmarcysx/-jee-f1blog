@@ -23,7 +23,7 @@ public class LoginBB {
 	private static final String PAGE_LOGIN = "/pages/login.xhtml?faces-redirect=true";
 	private static final String PAGE_STAY_AT_THE_SAME = null;
 	private static final String PAGE_BLOG = "/pages/blog.xhtml?faces-redirect=true";
-
+	private static final String PAGE_ADMIN_BLOG = "/pages/adminBlog.xhtml?faces-redirect=true";
 	
 	private String username;
 	private String password;
@@ -43,7 +43,6 @@ public class LoginBB {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
 	
 	@Inject
 	UserDAO userDAO;
@@ -66,11 +65,14 @@ public class LoginBB {
 		
 		RemoteClient<User> client = new RemoteClient<User>(); //create new RemoteClient
 		client.setDetails(user);
-	
+		
 		//store RemoteClient with request info in session (needed for SecurityFilter)
 		HttpServletRequest request = (HttpServletRequest) ctx.getExternalContext().getRequest();
 		client.store(request);
-
+		
+		if(username.equals("admin")) {
+			return PAGE_ADMIN_BLOG;
+		}
 		// and enter the system (now SecurityFilter will pass the request)
 		return PAGE_BLOG;
 	}

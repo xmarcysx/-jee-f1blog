@@ -16,15 +16,93 @@
        	F1Blog
     </ui:define>
 	<ui:define name="content">
-		<div class="login-container">
-		  <div class="login-main">
-		    <div class="logoF1">
-		      <h1>BLOG!!!!!<span>🏎️</span></h1>
-		    </div>
 		
-	
-		  </div>
+		<div class="navigation">
+		  <nav class="nav-items">
+		    <div class="logoF1">
+		      <h1>F1Blog<span>🏎️</span></h1>
+		    </div>
+		    <ul class="nav-menu">
+		      <li class="nav-link selected">
+				<h:form>
+			    	<h:commandLink value="Blog" action="#" />
+				</h:form>
+		      </li>
+		      <li class="nav-link">
+		      	<h:form>
+			    	<h:commandLink value="Artykuły" action="#{blogBB.doArtykuly()}" />
+				</h:form>
+		      </li>
+		      <li class="nav-link">
+		   	  	<h:form>
+			    	<h:commandLink value="Ustawienia" action="#{blogBB.doUstawienia()}" />
+				</h:form>
+		      </li>
+		      <li class="nav-link">
+		      	<h:form>
+			    	<h:commandLink value="Wyloguj" action="#{loginBB.doLogout()}" />
+				</h:form>
+		      </li>
+		    </ul>
+		    <div class="menu-icon">
+		      <i class="fas fa-bars"></i>
+		    </div>
+		  </nav>
 		</div>
+		
+		<div class="blog-container">
+		<!-- 
+		  <div class="blog-main">
+		    {if $user->username == "admin"}
+		    <div class="dodaj-wpis">
+		      <form action="{$conf->action_root}blog" method="post">
+		        <div class="input-wpis">
+		          <textarea
+		            id="mytextarea"
+		            placeholder="Napisz o czym chcesz poinformować fanów..."
+		            name="wpis"
+		          ></textarea>
+		        </div>
+		        <div class="log-btn">
+		          <button type="submit">
+		            <span class="text">Dodaj wpis</span>
+		          </button>
+		        </div>
+		      </form>
+		    </div>
+		    {else} {foreach $lista as $tekstBloga}
+		    <div class="blog-content">
+		      <div class="info">
+		        <div class="avatar">
+		          <img src="{$conf->images}/logo.png" />
+		        </div>
+		        <div class="blog-username">
+		          <h3><a href="{$conf->action_root}marcysiox">Marcysiox</a></h3>
+		        </div>
+		      </div>
+		
+		      <div class="blog-text">{$tekstBloga["tekst"]}</div>
+		    </div>
+		    {/foreach} {/if}
+		  </div>
+		-->
+		
+		    <div class="blog-content">
+		      <div class="info">
+		        <div class="avatar">
+		          <img src="{$conf->images}/logo.png" />
+		        </div>
+		        <div class="blog-username">
+		          <h3><a href="{$conf->action_root}marcysiox">Marcysiox</a></h3>
+		        </div>
+		      </div>
+		
+		      <div class="blog-text">{$tekstBloga["tekst"]}</div>
+		    </div>
+		    {/foreach} {/if}
+		  </div>
+		</div>		
+		
 	</ui:define>
 </ui:composition>
 </html>

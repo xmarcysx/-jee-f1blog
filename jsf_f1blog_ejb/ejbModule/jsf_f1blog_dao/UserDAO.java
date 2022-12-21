@@ -1,15 +1,14 @@
 package jsf_f1blog_dao;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
-import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import jsf_f1blog_entities.User;
+
 
 @Stateless
 public class UserDAO {
@@ -33,6 +32,12 @@ public class UserDAO {
 		return em.find(User.class, id);
 	}
 	
+	public List<User> searchForDuplicate(String username, String email) {
+		Query query =  em.createQuery("SELECT u FROM User u WHERE u.username LIKE :username OR u.email LIKE :email");
+		query.setParameter("username", username);
+		query.setParameter("email", email);
+		return query.getResultList();
+	}
 	
 	public User getUserFromDatabase(String username, String password) {
 		Query query = em.createQuery("SELECT u FROM User u WHERE u.username like :login AND u.password LIKE :pass");
