@@ -8,6 +8,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import jsf_f1blog_entities.User;
+import jsf_f1blog_entities.Blog;
 
 
 @Stateless
@@ -49,6 +50,11 @@ public class UserDAO {
 		} catch (Exception e) {	}
 		
 		return null;
+	}
+	
+	public List<Blog> getAllBlog(){
+		Query query =  em.createQuery("SELECT p FROM Blog p ORDER BY p.idBlog DESC");
+		return query.getResultList();
 	}
 
 }

@@ -214,3 +214,8 @@
     padding: 10px;
   }
 }
+
+.ui-datatable * {
+     border : 0px !important;
+     background: none !important;
+}
