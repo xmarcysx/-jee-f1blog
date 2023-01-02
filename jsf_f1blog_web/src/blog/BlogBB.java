@@ -23,7 +23,6 @@ public class BlogBB {
 	
 	private static final String PAGE_ARTYKULY = "/pages/artykuly.xhtml?faces-redirect=true";
 	private static final String PAGE_BLOG = "/pages/blog.xhtml?faces-redirect=true";
-	private static final String PAGE_USTAWIENIA = "/pages/ustawienia.xhtml?faces-redirect=true";
 	private static final String PAGE_MARCYSIOX = "/pages/marcysiox.xhtml?faces-redirect=true";
 	
 	@EJB
@@ -49,12 +48,6 @@ public class BlogBB {
 		HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true);
 		session.invalidate();
 		return PAGE_BLOG;
-	}
-
-	public String goToUstawienia(){
-		HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true);
-		session.invalidate();
-		return PAGE_USTAWIENIA;
 	}
 	
 	public String goToMarcysiox(){

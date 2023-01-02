@@ -2,17 +2,25 @@ package jsf_f1blog_dao;
 
 import java.util.List;
 
+import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import jsf_f1blog_entities.User;
 import jsf_f1blog_entities.Blog;
+import jsf_f1blog_entities.Role;
+import jsf_f1blog_entities.Wyniki;
 
+import jsf_f1blog_dao.RoleDAO;
 
 @Stateless
 public class UserDAO {
+	
+	@Inject
+	RoleDAO roleDAO;
 
 	@PersistenceContext
 	EntityManager em;
@@ -56,5 +64,18 @@ public class UserDAO {
 		Query query =  em.createQuery("SELECT p FROM Blog p ORDER BY p.idBlog DESC");
 		return query.getResultList();
 	}
-
+	
+	public List<Wyniki> getAllWyniki2021(){
+		Query query =  em.createQuery("SELECT p FROM Wyniki p WHERE p.sezon='2021'");
+		return query.getResultList();
+	}
+	
+	public List<Wyniki> getAllWyniki2022(){
+		Query query =  em.createQuery("SELECT p FROM Wyniki p WHERE p.sezon='2022'");
+		return query.getResultList();
+	}
+	
+	public void addToBlog(String dane) {
+		em.createNativeQuery("INSERT INTO Blog (tekst) VALUES (cos)");
+	}
 }

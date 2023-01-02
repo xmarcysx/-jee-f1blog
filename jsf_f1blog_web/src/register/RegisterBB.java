@@ -8,6 +8,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.faces.simplesecurity.PasswordHash;
 
 import jsf_f1blog_dao.UserDAO;
 import jsf_f1blog_dao.RoleDAO;
@@ -42,6 +43,14 @@ public class RegisterBB {
 		Role role = roleDAO.getRoleByName(this.roleOption);
 		this.user.setRole(role);;
 	}
+	
+	public void setHashedPassword() {
+		//Hash Password
+		String hashPassword = null;
+		PasswordHash hash = new PasswordHash();
+		hashPassword = hash.hashPassword(this.user.getPassword());
+		this.user.setPassword(hashPassword);
+	}
 
 	public boolean validateUser(User user) {
 		List<User> duplicates = userDAO.searchForDuplicate(user.getUsername(), user.getEmail());
@@ -54,6 +63,7 @@ public class RegisterBB {
 		
 		if(validateUser(user)) {
 			setUserRole();
+			setHashedPassword();
 			userDAO.create(user);
 			
 			return PAGE_LOGIN;

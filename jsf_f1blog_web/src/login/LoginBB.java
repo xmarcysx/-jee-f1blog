@@ -11,6 +11,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import javax.faces.simplesecurity.PasswordHash;
 
 
 import jsf_f1blog_dao.UserDAO;
@@ -50,6 +51,9 @@ public class LoginBB {
 
 	public String doLogin(){
 		FacesContext ctx = FacesContext.getCurrentInstance();
+		
+		//0. hash prompted password
+		password = new PasswordHash().hashPassword(password);
 
 		// 1. verify login and password - get User from "database"
 		User user = userDAO.getUserFromDatabase(username, password);
@@ -62,10 +66,11 @@ public class LoginBB {
 		}
 
 		// 3. if logged in: get User roles, save in RemoteClient and store it in session
-		
 		RemoteClient<User> client = new RemoteClient<User>(); //create new RemoteClient
 		client.setDetails(user);
-		
+		client.getRoles().add(user.getRole().getName());
+
+			
 		//store RemoteClient with request info in session (needed for SecurityFilter)
 		HttpServletRequest request = (HttpServletRequest) ctx.getExternalContext().getRequest();
 		client.store(request);

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>F1 Blog</title>
+</h:head>
+
+<ui:composition template="/templates/main-template.xhtml">
+
+	<ui:define name="title">
+       	F1Blog
+    </ui:define>
+	<ui:define name="content">
+		
+		<div class="navigation">
+		  <nav class="nav-items">
+		    <div class="logoF1">
+		      <h1>F1Blog<span>🏎️</span></h1>
+		    </div>
+		    <ul class="nav-menu">
+		      <li class="nav-link">
+				<h:form>
+			    	<h:commandLink value="Blog" action="#{blogBB.goToBlog()}" />
+				</h:form>
+		      </li>
+		      <li class="nav-link selected">
+		      	<h:form>
+			    	<h:commandLink value="Artykuły" action="#{blogBB.goToArtykuly()}" />
+				</h:form>
+		      </li>
+		      <li class="nav-link">
+		   	  	<h:form>
+			    	<h:commandLink value="Ustawienia" action="#{userBB.goToUstawienia()}" />
+				</h:form>
+		      </li>
+		      <li class="nav-link">
+		      	<h:form>
+			    	<h:commandLink value="Wyloguj" action="#{loginBB.doLogout()}" />
+				</h:form>
+		      </li>
+		    </ul>
+		    <div class="menu-icon">
+		      <i class="fas fa-bars"></i>
+		    </div>
+		  </nav>
+		</div>
+
+		<div class="blog-container">
+		  <div class="artykul1-main">
+		    <div class="artykul1-content">
+		      <div class="artykul1-img">
+		      	<h:graphicImage library="images" name="wyniki2022.jpg" />
+		      </div>
+		      <div class="artykul1-text">
+		        <h2>Wyniki sezonu 2022</h2>
+		        <div class="baza2021">
+		        	<p:dataTable id="artyukl" value="#{artykulBB.allWyniki2022}" var="art1">
+		        		<p:column headerText="Grand Prix" style="width: 40%;">
+		        			<h:outputText value="#{art1.grandPrix}" itemEscaped="false" escape="false" />
+		        		</p:column>
+		        		<p:column headerText="Zwycięzca" style="width: 40%;">
+		        			<h:outputText value="#{art1.zwyciezca}" itemEscaped="false" escape="false" />
+		        		</p:column>
+		        		<p:column headerText="Team" style="width: 40%;">
+		        			<h:outputText value="#{art1.team}" itemEscaped="false" escape="false" />
+		        		</p:column>
+			     	</p:dataTable>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+	</ui:define>
+</ui:composition>
+</html>

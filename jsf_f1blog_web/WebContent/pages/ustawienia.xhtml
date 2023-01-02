@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
+<h:head>
+	<title>F1 Blog</title>
+</h:head>
+
+<ui:composition template="/templates/main-template.xhtml">
+
+	<ui:define name="title">
+       	F1Blog
+    </ui:define>
+	<ui:define name="content">
+		
+		<div class="navigation">
+		  <nav class="nav-items">
+		    <div class="logoF1">
+		      <h1>F1Blog<span>🏎️</span></h1>
+		    </div>
+		    <ul class="nav-menu">
+		      <li class="nav-link">
+				<h:form>
+			    	<h:commandLink value="Blog" action="#{blogBB.goToBlog()}" />
+				</h:form>
+		      </li>
+		      <li class="nav-link">
+		      	<h:form>
+			    	<h:commandLink value="Artykuły" action="#{blogBB.goToArtykuly()}" />
+				</h:form>
+		      </li>
+		      <li class="nav-link selected">
+		   	  	<h:form>
+			    	<h:commandLink value="Ustawienia" action="#{userBB.goToUstawienia()}" />
+				</h:form>
+		      </li>
+		      <li class="nav-link">
+		      	<h:form>
+			    	<h:commandLink value="Wyloguj" action="#{loginBB.doLogout()}" />
+				</h:form>
+		      </li>
+		    </ul>
+		    <div class="menu-icon">
+		      <i class="fas fa-bars"></i>
+		    </div>
+		  </nav>
+		</div>
+
+		<div class="blog-container">
+		  <div class="user-main">
+		    <div class="user-info">
+		    	<h1>
+		      	E-mail:
+				<h:outputText value="#{remoteClient.details.email}"/>
+			  </h1>
+		      <h1>
+		      	Nazwa użytkownika:
+				<h:outputText value="#{remoteClient.details.username}"/>
+			  </h1>
+		      <h1>
+		      	Rola: 
+		      	<h:outputText value="#{remoteClient.details.role.name}"/>
+		      </h1>
+		    </div>
+		  </div>
+		</div>
+
+	</ui:define>
+</ui:composition>
+</html>
