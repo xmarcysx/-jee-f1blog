@@ -96,7 +96,7 @@
 }
 
 .blog-text {
-  margin: 0px 15px 10px 15px;
+  margin: 0px 15px 0px 15px;
   text-align: left;
 }
 
@@ -219,6 +219,13 @@
 }
 
 .ui-datatable * {
-     border : 0px !important;
      background: none !important;
+}
+
+tr th{
+	border: none !important;
+}
+
+tr {
+	border: none !important;
 }

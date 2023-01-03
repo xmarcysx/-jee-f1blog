@@ -75,6 +75,11 @@ public class UserDAO {
 		return query.getResultList();
 	}
 	
+	public List<Wyniki> getAllWyniki2023(){
+		Query query =  em.createQuery("SELECT p FROM Wyniki p WHERE p.sezon='2023'");
+		return query.getResultList();
+	}
+	
 	public void addToBlog(String dane) {
 		em.createNativeQuery("INSERT INTO Blog (tekst) VALUES (cos)");
 	}

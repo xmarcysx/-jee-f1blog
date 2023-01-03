@@ -1,8 +1,5 @@
 package admin;
 
-import java.util.List;
-
-
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
@@ -11,7 +8,6 @@ import javax.inject.Named;
 
 import jsf_f1blog_dao.BlogDAO;
 import jsf_f1blog_entities.Blog;
-import jsf_f1blog_entities.User;
 
 
 @Named("adminBB")

@@ -75,9 +75,6 @@ public class LoginBB {
 		HttpServletRequest request = (HttpServletRequest) ctx.getExternalContext().getRequest();
 		client.store(request);
 		
-		if(username.equals("admin")) {
-			return PAGE_ADMIN_BLOG;
-		}
 		// and enter the system (now SecurityFilter will pass the request)
 		return PAGE_BLOG;
 	}

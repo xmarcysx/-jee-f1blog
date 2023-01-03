@@ -39,20 +39,14 @@ public class BlogBB {
 
 	
 	public String goToArtykuly(){
-		HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true);
-		session.invalidate();
 		return PAGE_ARTYKULY;
 	}
 	
 	public String goToBlog(){
-		HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true);
-		session.invalidate();
 		return PAGE_BLOG;
 	}
 	
 	public String goToMarcysiox(){
-		HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true);
-		session.invalidate();
 		return PAGE_MARCYSIOX;
 	}
 }

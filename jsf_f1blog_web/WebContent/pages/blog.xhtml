@@ -52,29 +52,47 @@
 		
 		<div class="blog-container">
 			<div class="blog-main">
-		    	<div class="blog-content">
-					<p:dataTable id="blog" value="#{blogBB.allBlog}" var="p">
-						<p:column headerText="Autor" style="width: 20%;">
-							<div class="info">
-				       			<div class="avatar">
-				        			<h:graphicImage library="images" name="logo.png" />
-				        		</div>
-			        			<div class="blog-username">
-			          				<h3>
-			          					<h:form>
-				    						<h:commandLink value="Marcysiox" action="#{blogBB.goToMarcysiox()}" />
-										</h:form>
-			          				</h3>
-			        			</div>
-			      			</div>
-						</p:column>
-						<p:column headerText="Tekst">
-							<div class="blog-text">
-								<h:outputText value="#{p.tekst}" itemEscaped="false" escape="false" />
-				    		</div>
-						</p:column>
-			     	</p:dataTable>
-		   		</div>
+				<h:panelGroup rendered="#{remoteClient.details.role.name == 'admin'}">
+					<div class="dodaj-wpis">
+				      <h:form>
+				        <div class="input-wpis">
+				          <h:inputTextarea 
+				           placeholder="text"
+				          	value="#{adminBB.blog.tekst}"
+				            id="mytextarea"
+				          ></h:inputTextarea>
+				        </div>
+				        <div class="log-btn">
+				        	<h:commandButton value="Dodaj wpis" styleClass="btn"  action="#{adminBB.dodajWpis()}" />
+				        </div>
+				      </h:form>
+				    </div>	        
+				</h:panelGroup>
+				<h:panelGroup rendered="#{remoteClient.details.role.name == 'user'}">
+			    	<div class="blog-content">
+						<p:dataTable id="blog" value="#{blogBB.allBlog}" var="p">
+							<p:column headerText="Autor" style="width: 20%;">
+								<div class="info">
+					       			<div class="avatar">
+					        			<h:graphicImage library="images" name="logo.png" />
+					        		</div>
+				        			<div class="blog-username">
+				          				<h3>
+				          					<h:form>
+					    						<h:commandLink value="Marcysiox" action="#{blogBB.goToMarcysiox()}" />
+											</h:form>
+				          				</h3>
+				        			</div>
+				      			</div>
+							</p:column>
+							<p:column headerText="Tekst">
+								<div class="blog-text">
+									<h:outputText value="#{p.tekst}" itemEscaped="false" escape="false" />
+					    		</div>
+							</p:column>
+				     	</p:dataTable>
+			   		</div>
+		   		</h:panelGroup>
 		   </div>
 		</div>
 	</ui:define>

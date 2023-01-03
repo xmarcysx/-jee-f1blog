@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>F1 Blog</title>
+</h:head>
+
+<ui:composition template="/templates/main-template.xhtml">
+
+	<ui:define name="title">
+       	F1Blog
+    </ui:define>
+	<ui:define name="content">
+		
+		<div class="navigation">
+		  <nav class="nav-items">
+		    <div class="logoF1">
+		      <h1>F1Blog<span>🏎️</span></h1>
+		    </div>
+		    <ul class="nav-menu">
+		      <li class="nav-link">
+				<h:form>
+			    	<h:commandLink value="Blog" action="#{blogBB.goToBlog()}" />
+				</h:form>
+		      </li>
+		      <li class="nav-link selected">
+		      	<h:form>
+			    	<h:commandLink value="Artykuły" action="#{blogBB.goToArtykuly()}" />
+				</h:form>
+		      </li>
+		      <li class="nav-link">
+		   	  	<h:form>
+			    	<h:commandLink value="Ustawienia" action="#{userBB.goToUstawienia()}" />
+				</h:form>
+		      </li>
+		      <li class="nav-link">
+		      	<h:form>
+			    	<h:commandLink value="Wyloguj" action="#{loginBB.doLogout()}" />
+				</h:form>
+		      </li>
+		    </ul>
+		    <div class="menu-icon">
+		      <i class="fas fa-bars"></i>
+		    </div>
+		  </nav>
+		</div>
+
+		<div class="blog-container">
+		  <div class="artykul1-main">
+		    <div class="artykul1-content">
+		      <div class="artykul1-img">
+		      	<h:graphicImage library="images" name="wyniki2023.jpg" />
+		      </div>
+		      <div class="artykul1-text">
+		        <h2>Wyniki sezon 2023</h2>
+		        <div class="baza2021">
+		        	<p:dataTable id="artyukl" value="#{artykulBB.allWyniki2023}" var="art1">
+		        		<p:column headerText="Grand Prix" style="width: 40%;">
+		        			<h:outputText value="#{art1.grandPrix}" itemEscaped="false" escape="false" />
+		        		</p:column>
+		        		<p:column headerText="Zwycięzca" style="width: 40%;">
+		        			<h:outputText value="#{art1.zwyciezca}" itemEscaped="false" escape="false" />
+		        		</p:column>
+		        		<p:column headerText="Team" style="width: 40%;">
+		        			<h:outputText value="#{art1.team}" itemEscaped="false" escape="false" />
+		        		</p:column>
+			     	</p:dataTable>
+		        </div>	
+     
+	     		<h:panelGroup rendered="#{remoteClient.details.role.name == 'admin'}">
+				    
+			        <div class="dodaj-2022">
+			          <h:form>
+			            <div class="input-2022">
+				            <p:inputText id="grandPrix" placeholder="Grand Prix" value="#{artykulBB.wyniki.grandPrix}" required="true" requiredMessage="Podaj Grand Prix">
+				        	</p:inputText>
+			            </div>
+			            <div class="input-2022">
+			            	<p:inputText id="zwyciezca" placeholder="Zwycięzca" value="#{artykulBB.wyniki.zwyciezca}" required="true" requiredMessage="Podaj zwycięzcę">
+				        	</p:inputText>
+			            </div>
+			            <div class="input-2022">
+			            	<p:inputText id="team" placeholder="Team" value="#{artykulBB.wyniki.team}" required="true" requiredMessage="Podaj Team">
+				        	</p:inputText>
+			            </div>
+			            <h:messages styleClass="msg"/>
+			            <div class="log-btn">
+			            	<h:commandButton value="Dodaj" styleClass="btn"  action="#{artykulBB.doWyniki2023()}" update="msg"/>
+			            </div>
+			          </h:form>
+			        </div>
+				   
+				</h:panelGroup>
+     
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+	</ui:define>
+</ui:composition>
+</html>
