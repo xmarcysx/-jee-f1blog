@@ -2,7 +2,6 @@ package jsf_f1blog_dao;
 
 import java.util.List;
 
-import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
@@ -11,10 +10,7 @@ import javax.persistence.Query;
 
 import jsf_f1blog_entities.User;
 import jsf_f1blog_entities.Blog;
-import jsf_f1blog_entities.Role;
 import jsf_f1blog_entities.Wyniki;
-
-import jsf_f1blog_dao.RoleDAO;
 
 @Stateless
 public class UserDAO {

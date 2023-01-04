@@ -1,8 +1,5 @@
 package login;
 
-import java.util.List;
-
-
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
@@ -24,7 +21,6 @@ public class LoginBB {
 	private static final String PAGE_LOGIN = "/pages/login.xhtml?faces-redirect=true";
 	private static final String PAGE_STAY_AT_THE_SAME = null;
 	private static final String PAGE_BLOG = "/pages/blog.xhtml?faces-redirect=true";
-	private static final String PAGE_ADMIN_BLOG = "/pages/adminBlog.xhtml?faces-redirect=true";
 	
 	private String username;
 	private String password;

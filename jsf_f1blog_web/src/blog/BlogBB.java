@@ -1,9 +1,7 @@
 package blog;
 
 import javax.inject.Named;
-import javax.servlet.http.HttpSession;
 import javax.enterprise.context.RequestScoped;
-import javax.faces.context.FacesContext;
 
 import java.util.List;
 

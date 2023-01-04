@@ -49,21 +49,18 @@
 		    </div>
 		  </nav>
 		</div>
-		
+
 		<div class="blog-container">
 			<div class="blog-main">
 				<h:panelGroup rendered="#{remoteClient.details.role.name == 'admin'}">
 					<div class="dodaj-wpis">
-				      <h:form>
-				        <div class="input-wpis">
-				          <h:inputTextarea 
-				           placeholder="text"
-				          	value="#{adminBB.blog.tekst}"
-				            id="mytextarea"
-				          ></h:inputTextarea>
-				        </div>
+			      <h:form>
+				 		<div class="input-wpis">
+				        	<p:textEditor secure="false" widgetVar="editor1" value="#{adminBB.blog.tekst}" height="200" placeholder="Dodaj coś na bloga" required="true" requiredMessage="Napisz cokolwiek"/>
+				        </div> 
+				        <h:messages styleClass="msg"/>
 				        <div class="log-btn">
-				        	<h:commandButton value="Dodaj wpis" styleClass="btn"  action="#{adminBB.dodajWpis()}" />
+				        	<h:commandButton value="Dodaj wpis" styleClass="btn"  action="#{adminBB.dodajWpis()}" update="msg"/>
 				        </div>
 				      </h:form>
 				    </div>	        

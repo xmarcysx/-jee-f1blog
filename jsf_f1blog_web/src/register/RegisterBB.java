@@ -21,7 +21,7 @@ import jsf_f1blog_entities.Role;
 public class RegisterBB {
 	private static final String PAGE_LOGIN = "/pages/login.xhtml?faces-redirect=true";
 	private static final String PAGE_STAY_AT_THE_SAME = null;
-	private String roleOption = "user"; //user
+	private String roleOption = "user";
 	
 	private User user = new User();
 

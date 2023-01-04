@@ -12,8 +12,9 @@
 }
 
 .user-main {
+  display: flex;
   width: 70vw;
-  min-height: 70vh;
+  min-height: 20vh;
   height: auto;
   margin: 20px;
   text-align: center;
@@ -24,8 +25,12 @@
 }
 
 .user-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   width: 40vw;
-  height: auto;
+  height: 20vh;
   margin: 20px auto;
   background: rgba(255, 255, 255, 0.7);
   border-radius: 10px;

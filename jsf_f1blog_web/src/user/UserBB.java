@@ -10,7 +10,6 @@ import javax.ejb.EJB;
 
 
 import jsf_f1blog_dao.UserDAO;
-import jsf_f1blog_entities.User;
 
 
 @Named("userBB")
