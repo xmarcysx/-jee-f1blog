@@ -56,11 +56,11 @@
 					<div class="dodaj-wpis">
 			      <h:form>
 				 		<div class="input-wpis">
-				        	<p:textEditor secure="false" widgetVar="editor1" value="#{adminBB.blog.tekst}" height="200" placeholder="Dodaj coś na bloga" required="true" requiredMessage="Napisz cokolwiek"/>
+				        	<p:textEditor secure="false" widgetVar="editor1" value="#{adminBB.blog.tekst}" height="200" placeholder="#{txtPlaceholders.blogText}" required="true" requiredMessage="#{txtErrors.blogAdmin}"/>
 				        </div> 
 				        <h:messages styleClass="msg"/>
 				        <div class="log-btn">
-				        	<h:commandButton value="Dodaj wpis" styleClass="btn"  action="#{adminBB.dodajWpis()}" update="msg"/>
+				        	<h:commandButton value="#{txtButtons.blogAdminBtn}" styleClass="btn"  action="#{adminBB.dodajWpis()}" update="msg"/>
 				        </div>
 				      </h:form>
 				    </div>	        

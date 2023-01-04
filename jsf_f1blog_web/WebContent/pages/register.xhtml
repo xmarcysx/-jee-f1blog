@@ -28,17 +28,17 @@
 			          Rejestracja
 			        </p>
 			        <div class="input-group">
-			        	<p:inputText id="email" placeholder="E-mail" value="#{registerBB.user.email}" required="true" requiredMessage="Podaj e-mail" validatorMessage="Podano nieprawidłowy adres e-mail">
+			        	<p:inputText id="email" placeholder="#{txtPlaceholders.registerEmail}" value="#{registerBB.user.email}" required="true" requiredMessage="#{txtErrors.registerEmail}" validatorMessage="#{txtValidators.registerEmail}">
 			        		<f:validateRegex pattern="^[A-Za-z0-9+_.-]+@(.+)$"/>
 			        	</p:inputText>
 			        </div>
 			        <div class="input-group">
-			        	<p:inputText id="username" placeholder="Nazwa użytkownika" value="#{registerBB.user.username}" required="true" requiredMessage="Podaj nazwę użytkownika">
+			        	<p:inputText id="username" placeholder="#{txtPlaceholders.registerUsername}" value="#{registerBB.user.username}" required="true" requiredMessage="#{txtErrors.registerUsername}">
 			        		
 			        	</p:inputText>
 			        </div>
 			        <div class="input-group">
-			        	<p:password id="password" placeholder="Hasło" value="#{registerBB.user.password}" required="true" requiredMessage="Podaj hasło"  validatorMessage="Hasło musi zawierać od 5 do 20 znaków">
+			        	<p:password id="password" placeholder="#{txtPlaceholders.registerPass}" value="#{registerBB.user.password}" required="true" requiredMessage="#{txtErrors.registerPass}"  validatorMessage="#{txtValidators.registerPass}">
 			        		<f:validateLength minimum="5" maximum="20"/>
 			        	</p:password>
 			        </div>
@@ -46,14 +46,14 @@
 			        <h:messages styleClass="msg"/>
 			        			        
 			        <div class="log-btn">
-			    		<h:commandButton value="Zarejestruj" styleClass="btn"  action="#{registerBB.doRegister()}" update="msg"/>
+			    		<h:commandButton value="#{txtButtons.registerBtn}" styleClass="btn"  action="#{registerBB.doRegister()}" update="msg"/>
 		         	</div>
 		         	
 				</h:form>
 				
 				<p class="login-register-text">
 				  	<h:form>
-				    	Masz konto? <h:commandLink styleClass="registerText" value="Zaloguj się" action="#{userBB.goToLogin()}" />
+				    	Masz konto? <h:commandLink styleClass="registerText" value="#{txtButtons.loginBtn}" action="#{userBB.goToLogin()}" />
 					</h:form>
 		      	</p>
 		    </div>

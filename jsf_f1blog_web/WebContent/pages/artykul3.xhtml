@@ -77,20 +77,20 @@
 			        <div class="dodaj-2022">
 			          <h:form>
 			            <div class="input-2022">
-				            <p:inputText id="grandPrix" placeholder="Grand Prix" value="#{artykulBB.wyniki.grandPrix}" required="true" requiredMessage="Podaj Grand Prix">
+				            <p:inputText id="grandPrix" placeholder="#{txtPlaceholders.art3GrandPrix}" value="#{artykulBB.wyniki.grandPrix}" required="true" requiredMessage="#{txtErrors.art3GrandPrix}">
 				        	</p:inputText>
 			            </div>
 			            <div class="input-2022">
-			            	<p:inputText id="zwyciezca" placeholder="Zwycięzca" value="#{artykulBB.wyniki.zwyciezca}" required="true" requiredMessage="Podaj zwycięzcę">
+			            	<p:inputText id="zwyciezca" placeholder="#{txtPlaceholders.art3Zwyciezca}" value="#{artykulBB.wyniki.zwyciezca}" required="true" requiredMessage="#{txtErrors.art3Zwyciezca}">
 				        	</p:inputText>
 			            </div>
 			            <div class="input-2022">
-			            	<p:inputText id="team" placeholder="Team" value="#{artykulBB.wyniki.team}" required="true" requiredMessage="Podaj Team">
+			            	<p:inputText id="team" placeholder="#{txtPlaceholders.art3Team}" value="#{artykulBB.wyniki.team}" required="true" requiredMessage="#{txtErrors.art3Team}">
 				        	</p:inputText>
 			            </div>
 			            <h:messages styleClass="msg"/>
 			            <div class="log-btn">
-			            	<h:commandButton value="Dodaj" styleClass="btn"  action="#{artykulBB.doWyniki2023()}" update="msg"/>
+			            	<h:commandButton value="#{txtButtons.art3Btn}" styleClass="btn"  action="#{artykulBB.doWyniki2023()}" update="msg"/>
 			            </div>
 			          </h:form>
 			        </div>

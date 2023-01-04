@@ -28,20 +28,20 @@
 		          Logowanie
 		        </p>
 		        <div class="input-group">
-		        	<p:inputText id="username" placeholder="Nazwa użytkownika" value="#{loginBB.username}" required="true" requiredMessage="Podaj nazwę użytkownika"/>
+		        	<p:inputText id="username" placeholder="#{txtPlaceholders.loginUsername}" value="#{loginBB.username}" required="true" requiredMessage="#{txtErrors.loginUsername}"/>
 		        </div>
 		        <div class="input-group">
-		        	<p:password id="password" placeholder="Hasło" value="#{loginBB.password}" required="true" requiredMessage="Podaj hasło"/>
+		        	<p:password id="password" placeholder="#{txtPlaceholders.loginPass}" value="#{loginBB.password}" required="true" requiredMessage="#{txtErrors.loginPass}"/>
 		        </div>		
 				<h:messages styleClass="msg"/>
 		
 		        <div class="log-btn">
-			    	<h:commandButton value="Zaloguj" styleClass="btn"  action="#{loginBB.doLogin()}" update="msg"/>
+			    	<h:commandButton value="#{txtButtons.loginBtn}" styleClass="btn"  action="#{loginBB.doLogin()}" update="msg"/>
 		        </div>
 		      </h:form>
 		      <p class="login-register-text">
 			  	<h:form>
-			    	Nie masz konta? <h:commandLink styleClass="registerText" value="Zarejestruj się" action="#{userBB.goToRegister()}" />
+			    	Nie masz konta? <h:commandLink styleClass="registerText" value="#{txtButtons.registerBtn}" action="#{userBB.goToRegister()}" />
 				</h:form>
 		      </p>
 		    </div>

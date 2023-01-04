@@ -3,4 +3,25 @@
           xmlns="http://xmlns.jcp.org/xml/ns/javaee"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_3.xsd">
+ <application>
+  <resource-bundle>
+   <base-name>resources.textErrors</base-name>
+   <var>txtErrors</var>
+  </resource-bundle>
+  <resource-bundle>
+   <base-name>resources.textPlaceholders</base-name>
+   <var>txtPlaceholders</var>
+  </resource-bundle>
+  <resource-bundle>
+   <base-name>resources.textButtons</base-name>
+   <var>txtButtons</var>
+  </resource-bundle>
+  <resource-bundle>
+   <base-name>resources.textValidators</base-name>
+   <var>txtValidators</var>
+  </resource-bundle>
+  <locale-config>
+   <default-locale>pl</default-locale>
+  </locale-config>
+ </application>
 </faces-config>
