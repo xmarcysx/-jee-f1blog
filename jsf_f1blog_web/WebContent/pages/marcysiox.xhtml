@@ -71,8 +71,10 @@
 		      		</p>
 		    	</div>
 		    	<div class="blog-content">
-					<p:dataTable id="blog" value="#{blogBB.allBlog}" var="p">
-						<p:column headerText="Autor" style="width: 20%;">
+					<p:dataTable id="blog" value="#{blogBB.allBlog}" var="p" paginator="true" lazy="true" rows="5"
+                     				 paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
+                     				 rowsPerPageTemplate="5,10,15" >
+						<p:column headerText="Autor" style="width: 30%;">
 							<div class="info">
 				       			<div class="avatar">
 				        			<h:graphicImage library="images" name="logo.png" />

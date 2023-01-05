@@ -67,8 +67,10 @@
 				</h:panelGroup>
 				<h:panelGroup rendered="#{remoteClient.details.role.name == 'user'}">
 			    	<div class="blog-content">
-						<p:dataTable id="blog" value="#{blogBB.allBlog}" var="p">
-							<p:column headerText="Autor" style="width: 20%;">
+						<p:dataTable id="blog" value="#{blogBB.allBlog}" var="p" paginator="true" lazy="true" rows="5"
+                     				 paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
+                     				 rowsPerPageTemplate="5,10,15" >
+							<p:column style="width: 30%;">
 								<div class="info">
 					       			<div class="avatar">
 					        			<h:graphicImage library="images" name="logo.png" />
@@ -82,7 +84,7 @@
 				        			</div>
 				      			</div>
 							</p:column>
-							<p:column headerText="Tekst">
+							<p:column>
 								<div class="blog-text">
 									<h:outputText value="#{p.tekst}" itemEscaped="false" escape="false" />
 					    		</div>
